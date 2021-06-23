@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JOB PORTAL</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="{% static 'land.css' %}">-->
+    <!-- CSS only -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <style media="screen">
+      body{
+        width: 100%;
+        background-color: whitesmoke;
+      }
+    </style>
+  </head>
+  <body >
+
+ 
+
+
+
+                        <form action="{% url 'student' %}" method="post" style="background-color: white; border: 3px solid #f1f1f1; margin-top: 3%; width: 70%; margin-left: 15%;">
+                            {% csrf_token %}
+                            <div style="width:100%; align-items: center; border-bottom: 3px solid #f1f1f1;">
+                              <h2 style="padding: 20px; margin-left: 35%; width: 100%;">Student Register Form</h2>
+                            </div>
+
+                            <div class="container" style="width: 50%; margin-top: 3%; margin-bottom: 1%;" >
+                                <label><b>Username</b></label>
+                                <div class="form-group">
+                                <input
+                                type="text"
+                                placeholder="Enter Username"
+                                name="username"
+                                id="usernameField"
+                                value="{{fieldValues.username}}" required style="width: 100%;
+                                color: black;
+                                padding: 12px 20px;
+                                margin: 8px 0;
+                                display: inline-block;
+                                border: 1px solid black(219, 67, 67);
+                                box-sizing: border-box;">
+                                </div>
+
+                                <label><b>Email</b></label>
+                                  <div class="form-group">
+                                  <input type="email"
+                                  placeholder="Enter email"
+                                  name="email"
+                                  id="emailField"
+                                  value="{{fieldValues.email}}" required style="width: 100%;
+                                  color: black;
+                                  padding: 12px 20px;
+                                  margin: 8px 0;
+                                  display: inline-block;
+                                  border: 1px solid black(219, 67, 67);
+                                  box-sizing: border-box;">
+                                  </div>
+                                <label><b>Password</b></label>
+                                <div class="form-group">
+                                  <input type="password"
+                                  placeholder="Enter Password"
+                                  name="password"
+                                  id="passwordField" required style="width: 100%;
+                                  color: black;
+                                  padding: 12px 20px;
+                                  margin: 8px 0;
+                                  display: inline-block;
+                                  border: 1px solid black(219, 67, 67);
+                                  box-sizing: border-box;">
+                                </div>
+
+                                <label><b> Confirm Password</b></label>
+                                <div class="form-group">
+                                  <input type="password"
+                                  placeholder="Confirm Password"
+                                  name="password2"
+                                  id="passwordField" required style="width: 100%;
+                                  color: black;
+                                  padding: 12px 20px;
+                                  margin: 8px 0;
+                                  display: inline-block;
+                                  border: 1px solid black(219, 67, 67);
+                                  box-sizing: border-box;">
+                                </div>
+
+                                <button type="submit"
+                                value="Register" style="background-color: #4CAF50;
+                                color: white;
+                                padding: 14px 20px;
+                                margin: 8px 0;
+                                border: none;
+                                cursor: pointer;
+                                width: 70%;
+                                margin-left: 17%;
+                                font: inherit;
+                                color: white;">Register</button>
+
+                                <div class="b-container" style="margin-top: 20px; margin-left: 35%;">
+                                  <span class="text-lead lead">Have an account?</span><a href="{% url 'login' %}">Login</a><br>
+                                </div>
+
+                            </div>
+                          </form>
+
+
+
+  <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    </body>
+</html>
